@@ -304,12 +304,17 @@ section {
     margin: 0 0 12px;
 }
 
-/* POSTERS */
+/* POSTERS - 4:5 RATIO (736 x 920) */
 .poster-grid .project-image {
-    height: 260px;
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    height: auto;
+    object-fit: cover;
     border: 2px solid #38bdf8;
     border-radius: 8px;
     padding: 3px;
+    margin-bottom: 15px;
 }
 
 /* LOGOS */
