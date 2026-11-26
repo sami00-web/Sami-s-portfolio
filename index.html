@@ -24,7 +24,7 @@ body {
     position: relative;
 }
 
-/* ANIMATED COLOUR BACKGROUND */
+/* ANIMATED BACKGROUND */
 body::before {
     content: "";
     position: fixed;
@@ -32,9 +32,9 @@ body::before {
     z-index: -1;
     pointer-events: none;
     background:
-        radial-gradient(ellipse at 18% 25%, rgba(14, 165, 233, 0.34), transparent 34%),
-        radial-gradient(ellipse at 82% 30%, rgba(124, 58, 237, 0.30), transparent 35%),
-        radial-gradient(ellipse at 55% 82%, rgba(6, 182, 212, 0.24), transparent 38%),
+        radial-gradient(ellipse at 18% 25%, rgba(14,165,233,.34), transparent 34%),
+        radial-gradient(ellipse at 82% 30%, rgba(124,58,237,.30), transparent 35%),
+        radial-gradient(ellipse at 55% 82%, rgba(6,182,212,.24), transparent 38%),
         linear-gradient(135deg, #080e1c, #101a35, #11102b, #080e1c);
     background-size: 180% 180%;
     animation: colourFlow 16s ease-in-out infinite alternate;
@@ -67,7 +67,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 22px 8%;
-    background: rgba(16, 26, 48, 0.94);
+    background: rgba(16,26,48,.94);
     position: sticky;
     top: 0;
     z-index: 10;
@@ -105,7 +105,7 @@ nav a:hover {
     cursor: pointer;
 }
 
-/* WELCOME BANNER */
+/* BANNER */
 .banner-area {
     width: 100%;
     padding: 15px 10%;
@@ -135,7 +135,7 @@ body.admin-mode .banner-upload {
     display: inline-block;
 }
 
-/* HOME */
+/* HERO */
 .hero {
     min-height: 75vh;
     display: flex;
@@ -243,9 +243,9 @@ section {
     background: #17243b;
 }
 
-/* CARDS AND GALLERY */
+/* CARDS */
 .card {
-    background: rgba(17, 29, 51, 0.94);
+    background: rgba(17,29,51,.94);
     padding: 20px;
     border-radius: 12px;
     text-align: center;
@@ -289,8 +289,6 @@ section {
 /* THUMBNAILS */
 #thumbnailGallery .card {
     padding: 12px;
-    border: 1px solid #243653;
-    background: rgba(17, 29, 51, 0.94);
 }
 
 #thumbnailGallery .project-image {
@@ -304,7 +302,7 @@ section {
     margin: 0 0 12px;
 }
 
-/* POSTERS - 4:5 RATIO (736 x 920) */
+/* POSTERS */
 .poster-grid .project-image {
     display: block;
     width: 100%;
@@ -369,18 +367,18 @@ body.admin-mode .admin-only {
 
 /* FOOTER */
 footer {
-    background: rgba(16, 26, 48, 0.95);
+    background: rgba(16,26,48,.95);
     text-align: center;
     padding: 25px;
     color: #9caec6;
 }
 
-/* FULL SCREEN IMAGE VIEWER */
+/* VIEWER */
 .image-viewer {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, .95);
+    background: rgba(0,0,0,.95);
     z-index: 9999;
     justify-content: center;
     align-items: center;
@@ -415,10 +413,11 @@ footer {
     text-align: center;
     color: #38bdf8;
     padding: 10px;
+    overflow-wrap: anywhere;
 }
 
-/* MOBILE RESPONSIVE */
-@media(max-width: 750px) {
+/* MOBILE */
+@media(max-width:750px) {
     header {
         flex-direction: column;
         gap: 18px;
@@ -477,25 +476,22 @@ footer {
     </nav>
 </header>
 
-<!-- WELCOME BANNER -->
+<!-- BANNER -->
 <div class="banner-area">
 
-    <img
-        id="welcomeBanner"
-        class="welcome-banner"
-        src="https://placehold.co/1200x240/17243b/38bdf8?text=Welcome+To+My+Portfolio"
-        alt="Welcome Banner"
-    >
+    <img id="welcomeBanner"
+         class="welcome-banner"
+         src="https://placehold.co/1200x240/17243b/38bdf8?text=Welcome+To+My+Portfolio"
+         alt="Welcome Banner">
 
-    <label class="banner-upload" for="bannerUpload">
+    <label class="banner-upload admin-only" for="bannerUpload">
         Upload / Change Welcome GIF
     </label>
 
     <input type="file"
-        id="bannerUpload"
-        accept="image/gif"
-        hidden>
-
+           id="bannerUpload"
+           accept="image/gif"
+           hidden>
 </div>
 
 <div id="statusMessage"></div>
@@ -521,8 +517,8 @@ footer {
     <div class="profile">
 
         <img id="profilePic"
-            alt="Sami Profile"
-            src="https://placehold.co/300x300/17243b/38bdf8?text=Sami">
+             alt="Sami Profile"
+             src="https://placehold.co/300x300/17243b/38bdf8?text=Sami">
 
         <div class="upload-actions">
             <label class="upload admin-only" for="photoUpload">
@@ -530,9 +526,10 @@ footer {
             </label>
         </div>
 
-        <input type="file" id="photoUpload"
-            accept="image/jpeg,image/png,image/webp" hidden>
-
+        <input type="file"
+               id="photoUpload"
+               accept="image/jpeg,image/png,image/webp"
+               hidden>
     </div>
 </div>
 
@@ -543,11 +540,10 @@ footer {
         About <span>Me</span>
     </h2>
 
-    <img
-        id="aboutPic"
-        class="about-image"
-        src="https://placehold.co/300x300/17243b/38bdf8?text=About+Me"
-        alt="About Sami">
+    <img id="aboutPic"
+         class="about-image"
+         src="https://placehold.co/300x300/17243b/38bdf8?text=About+Me"
+         alt="About Sami">
 
     <div class="upload-actions">
         <label class="upload admin-only" for="aboutUpload">
@@ -555,8 +551,10 @@ footer {
         </label>
     </div>
 
-    <input type="file" id="aboutUpload"
-        accept="image/jpeg,image/png,image/webp" hidden>
+    <input type="file"
+           id="aboutUpload"
+           accept="image/jpeg,image/png,image/webp"
+           hidden>
 
     <p>
         My name is Sami Niazi. I am passionate about Graphic
@@ -565,7 +563,6 @@ footer {
         My goal is to improve my creativity and become a professional
         graphic designer.
     </p>
-
 </section>
 
 <!-- SKILLS -->
@@ -587,7 +584,6 @@ footer {
         </div>
 
     </div>
-
 </section>
 
 <!-- PORTFOLIO -->
@@ -628,7 +624,7 @@ footer {
     <p>WhatsApp: 0371-1216923</p>
     <p>GitHub: github.com/yourusername</p>
 
-    <a href="mailto:your@email.com" class="btn">
+    <a href="mailto:niazisami138@gmail.com" class="btn">
         Send Me an Email
     </a>
 
@@ -762,7 +758,7 @@ function publicImageURL(path) {
 }
 
 /* ==================================
-   IMAGE LOADING
+   IMAGE LOADING - CACHE FIX
 ================================== */
 
 function loadPortfolioImage(path,image,placeholder) {
@@ -772,7 +768,8 @@ function loadPortfolioImage(path,image,placeholder) {
         image.src = placeholder;
     };
 
-    image.src = publicImageURL(path);
+    /* Cache busting */
+    image.src = publicImageURL(path) + "?v=" + Date.now();
 }
 
 /* ==================================
@@ -815,13 +812,13 @@ async function uploadImage(path,file,image) {
             .upload(path,file,{
                 upsert: true,
                 contentType: file.type,
-                cacheControl: "3600"
+                cacheControl: "0"
             });
 
         if (error) throw error;
 
+        /* Latest image force reload */
         image.onerror = null;
-
         image.src = publicImageURL(path) + "?v=" + Date.now();
 
         showStatus("Picture successfully upload ho gayi!");
@@ -840,7 +837,6 @@ function showStatus(message) {
 
     document.getElementById("statusMessage").textContent =
         message;
-
 }
 
 /* ==================================
@@ -865,7 +861,6 @@ function setupUpload(inputId,imageId,path,placeholder) {
         this.value = "";
 
     });
-
 }
 
 setupUpload(
@@ -933,7 +928,8 @@ function makeSlots(containerId,type,count) {
         image.alt = title;
 
         const placeholder =
-        `https://placehold.co/600x350/17243b/38bdf8?text=${encodeURIComponent(title)}`;
+        "https://placehold.co/600x350/17243b/38bdf8?text=" +
+        encodeURIComponent(title);
 
         image.src = placeholder;
 
@@ -995,9 +991,7 @@ function makeSlots(containerId,type,count) {
 ================================== */
 
 makeSlots("thumbnailGallery","Thumbnail",10);
-
 makeSlots("posterGallery","Poster",10);
-
 makeSlots("logoGallery","Logo",10);
 
 /* ==================================
